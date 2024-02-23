@@ -18,7 +18,6 @@ Expected output for the string "ABcD1293Z" is "cdEf2304b" """
 
 
 class Cypher:
-
     def __init__(self, input_string):
         self.input_string = input_string
 
@@ -34,17 +33,24 @@ class Cypher:
                 new_char = chr(new_ord)
                 new_char = new_char.swapcase()  # Toggle case
             else:
-                new_char = char  # Leave non-alphanumeric characters unchanged
+                new_char = char  
             cypher_string += new_char
         return cypher_string
 
     def create_cypher(self):
-        
         cypher_string = self.convert_string(self.input_string)
         return cypher_string
 
+    def print_cypher(self):
+        print("Original String:", self.input_string)
+        print("Cypher String:", self.create_cypher())
+
+
 input_string = input("Enter a string to convert: ")
 cypher_object = Cypher(input_string)
-cypher_string = cypher_object.create_cypher()
-print("Cypher string:", cypher_string)  
+
+
+cypher_object.print_cypher()
+
+
 
